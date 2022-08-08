@@ -9,8 +9,16 @@ class ApiContactController extends Controller
 {
     public function index()
     {
-        $data = Contact::all();
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        // $contacts = Contact::all();
+        // return response()->json(
+        //     [
+        //         'contacts' => $contacts,
+        //         'message' => 'Contacts',
+        //         'code' => 200
+        //     ]
+        // );
+        $contacts = Contact::all();
+        return response()->json(['message' => 'Success', 'contacts' => $contacts]);
     }
 
     public function detail($id)

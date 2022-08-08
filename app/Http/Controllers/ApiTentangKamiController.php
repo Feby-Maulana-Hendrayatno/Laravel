@@ -9,8 +9,9 @@ class ApiTentangKamiController extends Controller
 {
     public function index()
     {
-        $data = TentangKami::all();
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $tentangKami = TentangKami::all();
+        return response()->json(['message' => 'Success', 'tentangKami' => $tentangKami]);
+        
     }
 
     public function detail($id)

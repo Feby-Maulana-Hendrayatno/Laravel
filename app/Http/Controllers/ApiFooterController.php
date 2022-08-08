@@ -9,33 +9,33 @@ class ApiFooterController extends Controller
 {
     public function index()
     {
-        $data = Footer::all();
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $footer = Footer::all();
+        return response()->json(['message' => 'Success', 'footer' => $footer]);
     }
 
     public function detail($id)
     {
-        $data = Footer::find($id);
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $footer = Footer::find($id);
+        return response()->json(['message' => 'Success', 'footer' => $footer]);
     }
 
     public function store(Request $request)
     {
-        $data = Footer::create($request->all());
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $footer = Footer::create($request->all());
+        return response()->json(['message' => 'Success', 'footer' => $footer]);
     }
 
     public function update(Request $request, $id)
     {
-        $data = Footer::find($id);
-        $data->update($request->all());
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $footer = Footer::find($id);
+        $footer->update($request->all());
+        return response()->json(['message' => 'Success', 'footer' => $footer]);
     }
 
     public function destroy($id)
     {
-        $data = Footer::find($id);
-        $data->delete();
-        return response()->json(['message' => 'Success', 'data' => null]);
+        $footer = Footer::find($id);
+        $footer->delete();
+        return response()->json(['message' => 'Success', 'footer' => null]);
     }
 }

@@ -9,33 +9,33 @@ class ApiProdukController extends Controller
 {
     public function index()
     {
-        $data = Produk::all();
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $produk = Produk::all();
+        return response()->json(['message' => 'Success', 'produk' => $produk]);
     }
 
     public function detail($id)
     {
-        $data = Produk::find($id);
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $produk = Produk::find($id);
+        return response()->json(['message' => 'Success', 'produk' => $produk]);
     }
 
     public function store(Request $request)
     {
-        $data = Produk::create($request->all());
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $produk = Produk::create($request->all());
+        return response()->json(['message' => 'Success', 'produk' => $produk]);
     }
 
     public function update(Request $request, $id)
     {
-        $data = Produk::find($id);
-        $data->update($request->all());
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $produk = Produk::find($id);
+        $produk->update($request->all());
+        return response()->json(['message' => 'Success', 'produk' => $produk]);
     }
 
     public function destroy($id)
     {
-        $data = Produk::find($id);
-        $data->delete();
-        return response()->json(['message' => 'Success', 'data' => null]);
+        $produk = Produk::find($id);
+        $produk->delete();
+        return response()->json(['message' => 'Success', 'produk' => null]);
     }
 }

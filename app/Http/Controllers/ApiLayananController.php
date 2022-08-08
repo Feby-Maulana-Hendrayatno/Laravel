@@ -9,33 +9,33 @@ class ApiLayananController extends Controller
 {
     public function index()
     {
-        $data = Layanan::all();
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $layanan = Layanan::all();
+        return response()->json(['message' => 'Success', 'layanan' => $layanan]);
     }
 
     public function detail($id)
     {
-        $data = Layanan::find($id);
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $layanan = Layanan::find($id);
+        return response()->json(['message' => 'Success', 'layanan' => $layanan]);
     }
 
     public function store(Request $request)
     {
-        $data = Layanan::create($request->all());
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $layanan = Layanan::create($request->all());
+        return response()->json(['message' => 'Success', 'layanan' => $layanan]);
     }
 
     public function update(Request $request, $id)
     {
-        $data = Layanan::find($id);
-        $data->update($request->all());
-        return response()->json(['message' => 'Success', 'data' => $data]);
+        $layanan = Layanan::find($id);
+        $layanan->update($request->all());
+        return response()->json(['message' => 'Success', 'layanan' => $layanan]);
     }
 
     public function destroy($id)
     {
-        $data = Layanan::find($id);
-        $data->delete();
-        return response()->json(['message' => 'Success', 'data' => null]);
+        $layanan = Layanan::find($id);
+        $layanan->delete();
+        return response()->json(['message' => 'Success', 'layanan' => null]);
     }
 }

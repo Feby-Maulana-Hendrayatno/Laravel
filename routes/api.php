@@ -7,6 +7,7 @@ use App\Http\Controllers\ApiFooterController;
 use App\Http\Controllers\ApiLayananController;
 use App\Http\Controllers\ApiProdukController;
 use App\Http\Controllers\ApiTentangKamiController;
+use App\Http\Controllers\ApiCarouselController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,18 @@ Route::prefix('tentang')->group(function () {
 
 Route::prefix('footer')->group(function () {
     Route::controller(ApiFooterController::class)->group(function () {
+        Route::get('', 'index');
+        Route::get('/{id}', 'detail');
+        Route::post('', 'store');
+        Route::put('/{id}', 'update');
+        Route::delete('/{id}', 'destroy');
+    });
+});
+
+
+
+Route::prefix('carousel')->group(function () {
+    Route::controller(ApiCarouselController::class)->group(function () {
         Route::get('', 'index');
         Route::get('/{id}', 'detail');
         Route::post('', 'store');

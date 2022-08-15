@@ -15,6 +15,7 @@ class ApiProdukController extends Controller
 
     public function detail($id)
     {
+        
         $produk = Produk::find($id);
         return response()->json(['message' => 'Success', 'produk' => $produk]);
     }
